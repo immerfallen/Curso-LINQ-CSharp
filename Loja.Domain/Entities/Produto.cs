@@ -14,7 +14,7 @@ namespace Loja.Domain.Entities
         public List<Produto> Listar()
         {
             _produto.Add(new Produto(){Id = Guid.NewGuid(),Nome = "Banana",Quantidade = 5,Valor = 5,DataVencimento = DateTime.Now.AddDays(5)});
-            _produto.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Melancia", Quantidade = 8, Valor = 6, DataVencimento = DateTime.Now.AddDays(2) });
+            _produto.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Melancia", Quantidade = 11, Valor = 6, DataVencimento = DateTime.Now.AddDays(2) });
             _produto.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Manga", Quantidade = 2, Valor = 9, DataVencimento = DateTime.Now.AddDays(25) });
             _produto.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Uva", Quantidade = 3, Valor = 25, DataVencimento = DateTime.Now.AddDays(9) });
             _produto.Add(new Produto() { Id = Guid.NewGuid(), Nome = "Pera", Quantidade = 1, Valor = 85, DataVencimento = DateTime.Now.AddDays(36) });
