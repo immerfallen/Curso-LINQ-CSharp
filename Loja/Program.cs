@@ -1,4 +1,5 @@
 ﻿using Loja.Domain.Entities;
+using Loja.Infra.EF.Repositories;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,15 @@ namespace Loja
         static void Main(string[] args)
         {
 
-            var frutas = new Produto().ListarFrutas();
+
+            //Salvando categoria com o Entity
+
+            new RespositoryCategoria().AdicionarCategoria(1, "Frutas");
+            new RespositoryCategoria().AdicionarCategoria(2, "Eletronicos");
+
+
+
+            /* var frutas = new Produto().ListarFrutas();
             var eletronicos = new Produto().ListarEletronicos();
 
             var produtos = new List<Produto>();
@@ -26,21 +35,21 @@ namespace Loja
             Console.WriteLine("---------------");
 
             var resultado = (from p in produtos
-                            group p by p.Categoria into grupo                            
-                            select new RelatorioProdutoPorCategoria
-                            {
-                                NomeDaCategoria = grupo.Key,
-                                ValorMinimo = grupo.Min(x => x.Valor),
-                                ValorMaximo = grupo.Max(x => x.Valor),
-                                ValorTotal = grupo.Sum(x=>x.Valor)
-                            }).OrderBy(x=>x.NomeDaCategoria);
+                             group p by p.Categoria into grupo
+                             select new RelatorioProdutoPorCategoria
+                             {
+                                 NomeDaCategoria = grupo.Key,
+                                 ValorMinimo = grupo.Min(x => x.Valor),
+                                 ValorMaximo = grupo.Max(x => x.Valor),
+                                 ValorTotal = grupo.Sum(x => x.Valor)
+                             }).OrderBy(x => x.NomeDaCategoria);
 
             Console.WriteLine(JsonConvert.SerializeObject(resultado));
 
             resultado.ToList().ForEach(x =>
             {
                 Console.WriteLine(JsonConvert.SerializeObject(x));
-            });
+            }); */
 
 
             //var valorProdutoMaisCaro = produtos.Max(x => x.Valor);
@@ -154,18 +163,18 @@ namespace Loja
             Console.ReadKey();
         }
 
-        public class ProdutoSelecionado
+       /* public class ProdutoSelecionado
         {
             public string Name { get; set; }
             public decimal Value { get; set; }
-        }
+        } */
     }
 
-    public class RelatorioProdutoPorCategoria
+    /*public class RelatorioProdutoPorCategoria
     {
         public string NomeDaCategoria { get; set; }
         public decimal ValorMinimo { get; set; }
         public decimal ValorMaximo { get; set; }
         public decimal ValorTotal { get; set; }
-    }
+    } */
 }

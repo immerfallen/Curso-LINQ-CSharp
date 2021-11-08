@@ -25,7 +25,7 @@ namespace Introducao
             //    Console.WriteLine(numero);
             //}
 
-
+            /*
 
             string[] cores = { "preto", "vermelho", "azul", "verde", "branco" };
 
@@ -39,6 +39,7 @@ namespace Introducao
             
 
             Console.ReadKey();
+            */
         }
 
         

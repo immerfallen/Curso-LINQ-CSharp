@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja", "Loja\Loja.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Domain", "Loja.Domain\Loja.Domain.csproj", "{16BA7298-4014-4C9C-A9A4-1EAF4B5C8DBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Infra.EF", "Loja.Infra.EF\Loja.Infra.EF.csproj", "{FCC0C357-F4A2-4669-8FEC-11576DB586E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Infra.Linq", "Loja.Infra.Linq\Loja.Infra.Linq.csproj", "{06AC59CB-C54A-4BDF-A7B5-5FAFC31B76D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{16BA7298-4014-4C9C-A9A4-1EAF4B5C8DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16BA7298-4014-4C9C-A9A4-1EAF4B5C8DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16BA7298-4014-4C9C-A9A4-1EAF4B5C8DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC0C357-F4A2-4669-8FEC-11576DB586E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC0C357-F4A2-4669-8FEC-11576DB586E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC0C357-F4A2-4669-8FEC-11576DB586E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC0C357-F4A2-4669-8FEC-11576DB586E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AC59CB-C54A-4BDF-A7B5-5FAFC31B76D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AC59CB-C54A-4BDF-A7B5-5FAFC31B76D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AC59CB-C54A-4BDF-A7B5-5FAFC31B76D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AC59CB-C54A-4BDF-A7B5-5FAFC31B76D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
