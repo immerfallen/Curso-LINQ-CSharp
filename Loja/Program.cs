@@ -11,7 +11,57 @@ namespace Loja
         static void Main(string[] args)
         {
 
-            var repetir = Enumerable.Repeat("Maro", 10);
+            var frutas = new Produto().ListarFrutas();
+            var eletronicos = new Produto().ListarEletronicos();
+
+            var produtos = new List<Produto>();
+            produtos.AddRange(frutas);
+            produtos.AddRange(eletronicos);
+
+            produtos.ForEach(x =>
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(x));
+            });
+
+            Console.WriteLine("---------------");
+
+            var resultado = (from p in produtos
+                            group p by p.Categoria into grupo                            
+                            select new RelatorioProdutoPorCategoria
+                            {
+                                NomeDaCategoria = grupo.Key,
+                                ValorMinimo = grupo.Min(x => x.Valor),
+                                ValorMaximo = grupo.Max(x => x.Valor),
+                                ValorTotal = grupo.Sum(x=>x.Valor)
+                            }).OrderBy(x=>x.NomeDaCategoria);
+
+            Console.WriteLine(JsonConvert.SerializeObject(resultado));
+
+            resultado.ToList().ForEach(x =>
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(x));
+            });
+
+
+            //var valorProdutoMaisCaro = produtos.Max(x => x.Valor);
+
+            ////menor
+
+            //var maiorQuantEmEstoque = produtos.Min(x => x.Quantidade);
+
+            ////Media do valor em estoque
+
+            //var mediaValorEmEstoque = produtos.Average(x => x.Valor);
+
+            ////maior
+
+            //var maiorQuantEmEstoque = produtos.Max(x => x.Quantidade);
+
+            ////menor
+
+            //var soma = produtos.Sum(x => x.Valor);
+
+            //var repetir = Enumerable.Repeat("Maro", 10);
 
             //var sequencia = Enumerable.Range(10, 20);
 
@@ -109,5 +159,13 @@ namespace Loja
             public string Name { get; set; }
             public decimal Value { get; set; }
         }
+    }
+
+    public class RelatorioProdutoPorCategoria
+    {
+        public string NomeDaCategoria { get; set; }
+        public decimal ValorMinimo { get; set; }
+        public decimal ValorMaximo { get; set; }
+        public decimal ValorTotal { get; set; }
     }
 }
